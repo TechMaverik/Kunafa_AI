@@ -1,13 +1,24 @@
 from django.shortcuts import render
-from kunafa_configurations.forms import RemindersForm
+from kunafa_configurations.forms import IPCameraForm
+from .models import IPCamera
 
 # Create your views here.
 def load_main_page(request):
     status=False
-    rem_form=RemindersForm
+    ip_form=IPCameraForm
+    all_data=IPCamera.objects.all()
     if request.POST:
-        form = rem_form(request.POST)
+        form = ip_form(request.POST)
         if form.is_valid():
             form.save()
             status=True
-    return render(request,"index.html",{'form':rem_form,'status':status})
+    context={
+        'form':ip_form,
+        'status':status,
+        'all_data':all_data}
+    return render(request,"index.html",context)
+
+def kill(request):
+    IPCamera.objects.all().delete()
+    context={'delete':'deleted'}
+    return render(request,"deleted.html",context)

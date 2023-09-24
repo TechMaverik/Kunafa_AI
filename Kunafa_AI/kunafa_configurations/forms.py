@@ -1,7 +1,7 @@
 from django import forms
-from .models import RemiderModel
+from .models import IPCamera
 
-class RemindersForm(forms.ModelForm):
+class IPCameraForm(forms.ModelForm):
     class Meta:
-        model=RemiderModel
+        model=IPCamera
         fields="__all__"

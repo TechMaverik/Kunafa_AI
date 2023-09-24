@@ -21,5 +21,6 @@ from kunafa_configurations import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.load_main_page)
+    path('', views.load_main_page),
+    path('delete/', views.kill)
 ]

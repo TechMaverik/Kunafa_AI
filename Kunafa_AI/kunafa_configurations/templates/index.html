@@ -18,7 +18,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h3>Tasks Reminders</h3>
+      <h3>Camera Configurations</h3>
       <form action = "" method = "post" class="post-form">
         {% csrf_token %}
         <table>
@@ -26,7 +26,7 @@
               <td>{{form.as_p}}</td>        
               {% if status %}
               <script>
-                alert("It Worked")
+                alert("Camera Configurations Updated")
               </script>
               {%endif%}
           </tr>
@@ -34,30 +34,34 @@
             <td><input type="submit" value=Submit class="btn btn-primary"></td>
           </tr>
         </table>
-        
-        
       </form>    
     </div>    
 
     <div class="col-sm-4">
-      <h3>Camera Configurations</h3>
-      <form>
+      <h3>Loaded Configurations</h3>
+      <form action = "" method = "post" class="post-form">
+        {% csrf_token %}
         <table>
+          {%for config in all_data%}
             <tr>  
-                <td><input type="text" class="form-control" id="ip" placeholder="IP Address"></td>
+                <td>{{config.IPV4}}</td>                
             </tr>
             <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>            
-                <td><input type="text" class="form-control" id="port" placeholder="Port"></td>
+                <td>{{config.PORT}}</td>                
             </tr>
             <tr>
-                <td>&nbsp;</td>
-            </tr>    
+              <td>{{config.MODEL}}</td>                
+            </tr>
             <tr>
-                <td><button type="button" class="btn btn-primary" >Submit</Submit></td>                               
-            </tr>            
+              <td>{{config.SOUND}}</td>
+            </tr>
+            {%endfor%}
+            <tr>
+              <td><submit><a href="http://127.0.0.1:8000/delete">Delete</a></submit></td>              
+            </tr>
+            <tr>
+              <td><submit><a href="http://127.0.0.1:8000/delete">Start</a></submit></td>        
+            </tr>
           </table>  
       </form>    
     </div>    

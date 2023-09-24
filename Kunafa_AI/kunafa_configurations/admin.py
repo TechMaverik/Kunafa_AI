@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import RemiderModel
+from .models import IPCamera
 
-admin.site.register(RemiderModel)
+admin.site.register(IPCamera)

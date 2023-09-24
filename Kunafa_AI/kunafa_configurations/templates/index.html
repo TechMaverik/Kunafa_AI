@@ -19,24 +19,23 @@
   <div class="row">
     <div class="col-sm-4">
       <h3>Tasks Reminders</h3>
-      <form>
+      <form action = "" method = "post" class="post-form">
+        {% csrf_token %}
         <table>
-            <tr>  
-                <td><input type="text" class="form-control" id="usr" placeholder="Task name"></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>            
-                <td><input type="time" class="form-control" id="time"></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>    
-            <tr>
-                <td><button type="button" class="btn btn-primary" >Submit</Submit></td>                
-            </tr>            
-          </table>  
+          <tr>
+              <td>{{form.as_p}}</td>        
+              {% if status %}
+              <script>
+                alert("It Worked")
+              </script>
+              {%endif%}
+          </tr>
+          <tr>
+            <td><input type="submit" value=Submit class="btn btn-primary"></td>
+          </tr>
+        </table>
+        
+        
       </form>    
     </div>    
 

@@ -1,0 +1,5 @@
+APPLICATION_NAME="Kunafa_AI_Vision"
+FACE_PATH="D:\Projects Archives\Kunafa_AI\Kunafa_AI\kunafa_configurations\HL_Cascades\haarcascade_frontalface_default.xml"
+FULL_BODY_PATH="D:\Projects Archives\Kunafa_AI\Kunafa_AI\kunafa_configurations\HL_Cascades\haarcascade_fullbody.xml"
+UPPER_HALF_BODY_PATH="D:\Projects Archives\Kunafa_AI\Kunafa_AI\kunafa_configurations\HL_Cascades\haarcascade_upperbody.xml"
+LOWER_HALF_BODY="D:\Projects Archives\Kunafa_AI\Kunafa_AI\kunafa_configurations\HL_Cascades\haarcascade_lowerbody.xml"
